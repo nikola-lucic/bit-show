@@ -31,7 +31,7 @@ Architecture:
     Module Revealing Pattern
     
 API
-#Documentation: http://api.tvmaze.com
+## Documentation: http://api.tvmaze.com
 List of shows endpoint: http://api.tvmaze.com/shows
 Single show data: http://api.tvmaze.com/shows/<show_id>
 
