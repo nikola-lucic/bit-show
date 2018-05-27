@@ -1,9 +1,5 @@
-# bit-show-
-bit-show 
 
-
-BitShow 
-
+# BitShow 
 
 Create a website whose main purpose is to provide information to the users about TV shows.
 
