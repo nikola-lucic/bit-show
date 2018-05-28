@@ -25,7 +25,7 @@ const uiModule = (() => {
             localStorage.setItem("id", id);
         },
         displayOnShowInfo(chosenShow, listOfSeasons, listOfActors) {
-            const mainContainer = $(`.main-page`).empty();
+            const mainContainer = $(".info-page").empty();
             const chosenShowTitle = $(`<h3>${chosenShow.name}</h3>`)
             const ulSeasons = $(`<ul>`);
             const seasonsTitle = $(`<h4 class='showTitle'>`);
@@ -33,15 +33,14 @@ const uiModule = (() => {
             listOfSeasons.forEach(season => {
                 const li = $(`<li>`);
                 li.text(`${season.startDate} - ${season.endDate}`);
-                ulSeasons.append($li);
+                ulSeasons.append(li);
             })
             listOfActors.forEach(actor => {
                 const liActors = $(`<li>`);
-                liActors.text(`${actor.person.name}`);
+                liActors.text(`${actor.name}`);
                 ulACtors.append(liActors);
             })
             const infoDisplay = $(`
-            <div class='row poster-and-lists'>
                 <div class='col-12 col-md-6'>
                     <img src='${chosenShow.posterUrl}' id='${chosenShow.id}' class='info-img'>
                 </div>
@@ -68,10 +67,9 @@ const uiModule = (() => {
                 <div class='col-12'>
                     ${chosenShow.description}
                 </div>
-            </div>
             `);
-            $mainContainer.append(chosenShowTitle);
-            $mainContainer.append(infoDisplay);
+            mainContainer.append(chosenShowTitle);
+            mainContainer.append(infoDisplay);
         },
         displaySearchList(listToDisplay) {
             const searchDiv = $(`.search-dropdown`);
@@ -92,9 +90,6 @@ const uiModule = (() => {
         reset() {
             $(`.search-box`).val("");
             $(`.dropdown-ul`).empty();
-        },
+        }
     }
-
-}
-
 })();
